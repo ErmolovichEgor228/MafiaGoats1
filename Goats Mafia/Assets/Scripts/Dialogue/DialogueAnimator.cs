@@ -9,11 +9,11 @@ public class DialogueAnimator : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        startAnim.SetBool("StartOpen", true);
+            startAnim.SetBool("StartOpen", true);
     }
     public void OnTriggerExit2D(Collider2D other)
     {
-        startAnim.SetBool("StartOpen", false);
-        dm.EndDialogue();
+            startAnim.SetBool("StartOpen", false);
+            dm.EndDialogue();
     }
 }
