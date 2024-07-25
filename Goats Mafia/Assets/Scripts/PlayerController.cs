@@ -8,11 +8,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] Vector2 direction;
     [SerializeField] Rigidbody2D rb;
-    public int pointsOfTrash;
+    [SerializeField] GameObject _startButton;
+    [SerializeField] GameObject _dialoguePanel;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        pointsOfTrash = 0;
+        _startButton.SetActive(false);
+        _dialoguePanel.SetActive(false);
     }
 
     void Update()
@@ -24,5 +26,11 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
+    }
+
+    public void DialogueStart()
+    {
+        _dialoguePanel.SetActive(true);
+        _startButton.SetActive(false);
     }
 }
